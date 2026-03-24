@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react'
-
+import React, { createContext, useRef, useState } from 'react'
+import EditList from './EditList';
+export const userNameContext=createContext()
 function UniqueList() {
   let [name, setName] = useState([])
   let inputRef = useRef()
@@ -37,6 +38,9 @@ function UniqueList() {
         </li>
       ) : <p>No Names Available</p>}
       </ul>
+     <userNameContext.Provider value={{name,setName}}>
+              <EditList/>
+     </userNameContext.Provider>
     </div>
   )
 }
