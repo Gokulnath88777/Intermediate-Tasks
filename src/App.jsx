@@ -8,6 +8,10 @@ import { createContext } from 'react'
 import Section from './ReactTaskDeepData/Section'
 import Content from './ReactTaskDeepData/Content'
 import Display from './ReactTaskDeepData/Display'
+import Parent from './Static-Child/Parent'
+import Child from './Static-Child/Child'
+import ParentFunc from './FunctionIssue.jsx/ParentFunc'
+import DynamicForm from './DynamicInputs/DynamicForm'
 
 export const nameContext=createContext()
 function App() {
@@ -25,6 +29,11 @@ let name="Gokulnath"
             </Content>
           </Section>
     </nameContext.Provider>
+    <Parent>
+        <Child/>
+    </Parent>
+    <ParentFunc/>
+    <DynamicForm/>
      </>
   )
 }
